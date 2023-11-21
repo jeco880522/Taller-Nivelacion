@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambiar Color</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <div id="elementoObjetivo">Elemento Objetivo</div>
+    <button id="cambiarColorBtn">Cambiar Color</button>
+
+    <script>
+        function cambiarColor() {
+            var elementoObjetivo = document.getElementById('elementoObjetivo');
+            elementoObjetivo.style.backgroundColor = '#e74c3c'; 
+        }
+        var cambiarColorBtn = document.getElementById('cambiarColorBtn');
+        cambiarColorBtn.addEventListener('click', cambiarColor);
+    </script>
+
+</body>
+</html>

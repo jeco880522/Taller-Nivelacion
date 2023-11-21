@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario con Validación</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <form id="miFormulario">
+        <label for="campoEntrada">Campo de Entrada:</label>
+        <input type="text" id="campoEntrada" name="campoEntrada" required>
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        function validarFormulario(event) {
+            event.preventDefault(); 
+
+            var campoEntrada = document.getElementById('campoEntrada');
+
+            if (campoEntrada.value.trim() === '') {
+                alert('Por favor, complete el campo de entrada.');
+                return;
+            }
+
+            console.log('Dato ingresado: ' + campoEntrada.value);
+            alert('Formulario correctamente diligenciado');
+
+            campoEntrada.value = '';
+        }
+
+        var miFormulario = document.getElementById('miFormulario');
+        miFormulario.addEventListener('submit', validarFormulario);
+    </script>
+
+</body>
+</html>

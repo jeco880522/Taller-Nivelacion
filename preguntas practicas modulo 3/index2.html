@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delegación de Eventos</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <ul id="listaElementos">
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+        <li>Elemento 4</li>
+    </ul>
+
+    <script>
+        function manejarClicEnLista(event) {
+            if (event.target.tagName === 'LI') {
+                console.log('Se hizo clic en: ' + event.target.textContent);
+            }
+        }
+        var listaElementos = document.getElementById('listaElementos');
+        listaElementos.addEventListener('click', manejarClicEnLista);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Almacenamiento en el Navegador</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+        <h2>Prueba de localStorage Y sessionStorage</h2>
+        
+    </section>
+
+    <div id="datosGuardados">
+        <label for="datoInput">Ingresar Dato:</label>
+        <input type="text" id="datoInput">
+        <button onclick="guardarDato('localStorage')">Guardar en localStorage</button>
+        <button onclick="guardarDato('sessionStorage')">Guardar en sessionStorage</button>
+        <br>
+        <button onclick="recuperarDato('localStorage')">Recuperar de localStorage</button>
+        <button onclick="recuperarDato('sessionStorage')">Recuperar de sessionStorage</button>
+    </div>
+
+    <script>
+
+        function guardarDato(areaAlmacenamiento) {
+            var datoInput = document.getElementById('datoInput').value;
+            window[areaAlmacenamiento].setItem('datoGuardado', datoInput);
+            console.log('Dato guardado:', datoInput);
+        }
+        function recuperarDato(areaAlmacenamiento) {
+            var datoGuardado = window[areaAlmacenamiento].getItem('datoGuardado');
+
+            if (datoGuardado) {
+                console.log('Dato recuperado:', datoGuardado);
+                alert('Dato recuperado: ' + datoGuardado);
+            } else {
+                console.log('No hay dato almacenado en ' + areaAlmacenamiento);
+                alert('No hay dato almacenado en ' + areaAlmacenamiento);
+            }
+        }
+    </script>
+
+</body>
+</html>
